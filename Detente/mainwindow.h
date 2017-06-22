@@ -5,6 +5,7 @@
 #include <QLayout>
 #include "QtMultimedia/qmediaplayer.h"
 #include <QtWidgets>
+#include <QProgressBar>
 #include <fstream>
 
 using namespace std;
@@ -20,6 +21,7 @@ class MainWindow : public QWidget
 	QHBoxLayout* layout2;
 	QMediaPlayer* player;
 	int count[nbBouton];
+    QProgressBar* son;
 
 public:
     MainWindow(QWidget *parent = 0);
@@ -32,6 +34,7 @@ public slots:
 	void montagne();
 	void urbain();
 	void general();
+    void vol(int value);
 
 };
 
