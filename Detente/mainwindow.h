@@ -3,8 +3,11 @@
 
 #include <QMainWindow>
 #include <QLayout>
-#include <QMediaPlayer>
+#include "QtMultimedia/qmediaplayer.h"
 #include <QtWidgets>
+#include <fstream>
+
+using namespace std;
 
 class MainWindow : public QWidget
 {
@@ -15,6 +18,8 @@ class MainWindow : public QWidget
 	QVBoxLayout* mainlayout;
 	QHBoxLayout* layout1;
 	QHBoxLayout* layout2;
+	QMediaPlayer* player;
+	int count[nbBouton];
 
 public:
     MainWindow(QWidget *parent = 0);
