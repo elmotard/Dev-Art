@@ -2,22 +2,30 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QPushButton>
+#include <QLayout>
+#include <QMediaPlayer>
+#include <QtWidgets>
 
 class MainWindow : public QWidget
 {
     Q_OBJECT
+	static const unsigned int nbBouton = 4;
+	QStringList listnomboutton;
+	QPushButton** TPBouton;
+	QVBoxLayout* mainlayout;
+	QHBoxLayout* layout1;
+	QHBoxLayout* layout2;
 
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    static const unsigned int nbBouton = 4;
-    QPushButton** TPBouton;
-    QVBoxLayout* mainlayout;
-    QHBoxLayout* layout1;
-    QHBoxLayout* layout2;
+
+public slots:
+	void mer();
+	void foret();
+	void montagne();
+	void urbain();
+	void general();
 
 };
 
