@@ -12,8 +12,11 @@ MainWindow::MainWindow(QWidget *parent)
     layout2 = new QHBoxLayout;
     TPBouton = new QPushButton*[nbBouton];
 	player = new QMediaPlayer;
+    son = new QProgressBar;
+    son->setRange(0, 100);
 
-	player->setVolume(50);
+    player->setVolume(50);
+    son->setValue(player->volume());
 
     for(unsigned int i=0; i<=nbBouton; ++i)
     {
@@ -35,6 +38,13 @@ MainWindow::MainWindow(QWidget *parent)
     mainlayout->addLayout(layout2);
     mainlayout->addWidget(TPBouton[nbBouton]);
 
+
+
+
+    connect(player, SIGNAL(volumeChanged(int)), this, SLOT(vol(int)));
+
+    mainlayout->addWidget(son);
+
     setLayout(mainlayout);
 
 
@@ -42,6 +52,9 @@ MainWindow::MainWindow(QWidget *parent)
     //const QIcon icone=QIcon("C:/Users/Flack/Downloads/f7c4d42657fbb19cde75d0df01f0b20d.jpg");
     //TPBouton[3]->setIcon(icone);
 
+    unsigned int heure = QTime::currentTime().hour();
+
+    //urbain 7h, foret 10h, mer 14h, montagne 22h
 }
 
 MainWindow::~MainWindow()
@@ -49,13 +62,20 @@ MainWindow::~MainWindow()
 
 }
 
+void MainWindow::keyPressEvent(QKeyEvent* e)
+{
+    if(e->key()==Qt::Key_Plus)
+        player->setVolume(player->volume()+1);
+    if(e->key()==Qt::Key_Minus)
+        player->setVolume(player->volume()-1);
+}
+
 void MainWindow::mer()
 {
 
 	if (count[0] == 0)
 	{
-		player->setMedia(QUrl("qrc:/audio/release_mer.mp3"));
-		qDebug() << "current media: " << player->currentMedia().canonicalUrl().toString();
+        player->setMedia(QUrl("qrc:/audio/release_mer.mp3"));
 		player->play();
 		count[0] = 1;
 	}
@@ -125,4 +145,9 @@ void MainWindow::general()
 		player->pause();
 		count[1] = 0;
 	}
+}
+
+void MainWindow::vol(int value)
+{
+    son->setValue(value);
 }
