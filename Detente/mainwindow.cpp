@@ -42,11 +42,23 @@ MainWindow::MainWindow(QWidget *parent)
     //const QIcon icone=QIcon("C:/Users/Flack/Downloads/f7c4d42657fbb19cde75d0df01f0b20d.jpg");
     //TPBouton[3]->setIcon(icone);
 
+    unsigned int heure = QTime::currentTime().hour();
+    qDebug() << heure;
+
+    //urbain 7h, foret 10h, mer 14h, montagne 22h
 }
 
 MainWindow::~MainWindow()
 {
 
+}
+
+void MainWindow::keyPressEvent(QKeyEvent* e)
+{
+    if(e->key()==Qt::Key_Plus)
+        player->setVolume(player->volume()+1);
+    if(e->key()==Qt::Key_Minus)
+        player->setVolume(player->volume()-1);
 }
 
 void MainWindow::mer()
