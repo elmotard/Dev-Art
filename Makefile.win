@@ -17,7 +17,7 @@ all :: $(EXECSPP)
 	$(CXX) -c $(CXXFLAGS) $*.cpp
 
 
-Formes.exe : main.o 
+detente.exe : main.o 
 	$(CXX) -o $@ $^ $(LIBS)
 
 depends :
