@@ -3,10 +3,13 @@
         <file>../Sons/Mer/release_mer.mp3</file>
         <file>../Sons/Montagne/release_montagne.mp3</file>
         <file>../Sons/Foret/release_foret.mp3</file>
+        <file>../Sons/Urbain/release_urbain.mp3</file>
     </qresource>
     <qresource prefix="/images">
         <file>../Images/fond_ecran_mer.jpg</file>
         <file>../Images/fond_ecran_montagne.jpg</file>
         <file>../Images/fond_ecran_foret.jpg</file>
+        <file>../Images/fleche_descendente.png</file>
+        <file>../Images/fleche_montante.png</file>
     </qresource>
 </RCC>

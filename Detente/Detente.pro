@@ -25,10 +25,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        timewindow.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+        timewindow.hpp
 
 RESOURCES += \
-    resources.qrc
+        resources.qrc
