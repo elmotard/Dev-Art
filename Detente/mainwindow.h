@@ -20,7 +20,9 @@ class MainWindow : public QWidget
 	QHBoxLayout* layout1;
 	QHBoxLayout* layout2;
 	QMediaPlayer* player;
-	int count[nbBouton];
+	int count[nbBouton+1];
+	QPixmap pixmap;
+	void paintEvent(QPaintEvent *event);
     QProgressBar* son;
 
 public:
