@@ -73,25 +73,25 @@ MainWindow::MainWindow(QWidget *parent)
 	timeUrbain[0] = 07;
 	timeUrbain[1] = 00;
 
-	if(heure==7)
+	if(time[0]==timeUrbain[0])
 	{
 		player->setMedia(QUrl("qrc:/audio/Sons/Urbain/release_urbain.mp3"));
 		player->play();
 	}
 
-	if(heure==10)
+	if(time[0]==timeForet[0])
 	{
 		player->setMedia(QUrl("qrc:/audio/Sons/Foret/release_foret.mp3"));
 		player->play();
 	}
 
-	if(heure==14)
+	if(time[0]==timeMer[0])
 	{
 		player->setMedia(QUrl("qrc:/audio/Sons/Mer/release_mer.mp3"));
 		player->play();
 	}
 
-	if(heure==22)
+	if(time[0]==timeMontagne[0])
 	{
 		player->setMedia(QUrl("qrc:/audio/Sons/Montagne/release_montagne.mp3"));
 		player->play();
@@ -102,7 +102,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 	//Mise du layout principale dans la fenetre
 	setLayout(mainlayout);
-
 
 }
 
